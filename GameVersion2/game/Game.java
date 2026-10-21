@@ -5,7 +5,9 @@ import javax.swing.JFrame;
 public class Game {
 	
 	protected JFrame window;
+	protected GamePanel panel;
 	Dimension dim;
+	Thread gameLoop;
 	
 	public Game() 
 	{
@@ -15,12 +17,16 @@ public class Game {
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setResizable(false);
 		window.setLocationRelativeTo(null);
+		panel = new GamePanel(dim);
+		window.add(panel);
 		
 	}
 	
 	public void run() 
 	{
+		gameLoop = new Thread(this.panel);
 		window.setVisible(true);
+		gameLoop.start();
 	}
 	
 	public static void main (String[] args) 

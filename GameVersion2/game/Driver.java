@@ -7,7 +7,7 @@ public class Driver {
 	public static void main(String[] args) {
 		Ball ball = new Ball("Ball1",100,150,2,5,50,Color.red);
 		
-		ball.show();
+		//ball.show();
 
 	}
 

@@ -22,9 +22,8 @@ public class Ball extends GameObject{
 	
 	@Override
 	public void update() {
-		this.x_ = this.direction_ + this.speed_;
-		
-		if(x_ > 600) 
+		this.x_ = this.x_ + this.speed_;
+		if(x_ > 800) 
 		{
 			this.x_ = -100;
 		}
